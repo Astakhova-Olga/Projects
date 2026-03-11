@@ -18,11 +18,11 @@
 -	Реализация дашборда с результатами анализа.
 
 **Стек**:
-•	Python: requests, pandas, sqlalchemy, numpy, Nominatim, BeautifulSoup
-•	JupyterHub
-•	Supabase
-•	PostgreSQL
-•	BI система: Yandex DataLens
+- Python: requests, pandas, sqlalchemy, numpy, Nominatim, BeautifulSoup
+- JupyterHub
+- Supabase
+- PostgreSQL
+- BI система: Yandex DataLens
 
 **Описание проекта**
 
