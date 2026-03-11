@@ -57,8 +57,8 @@
 Для удобства разработки аналитической панели в базе данных через  SQL Editor была реализована витрина данных в виде представления view_dtp_weather. Витрина данных содержит отобранные и объединенные данные об условиях, месте, транспортных средствах и участниках ДТП и о погодных условиях в месте и во время ДТП.
 
     `CREATE VIEW view_dtp_weather AS
-   SELECT 
-   dtp_common.kartid, 
+    SELECT 
+    dtp_common.kartid, 
    dtp_common.date, 
    dtp_common.dtp_v, 
    dtp_common.pog, 
