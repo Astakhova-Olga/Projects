@@ -57,50 +57,50 @@
 Для удобства разработки аналитической панели в базе данных через  SQL Editor была реализована витрина данных в виде представления view_dtp_weather. Витрина данных содержит отобранные и объединенные данные об условиях, месте, транспортных средствах и участниках ДТП и о погодных условиях в месте и во время ДТП.
 
     `CREATE VIEW view_dtp_weather AS
-SELECT 
-dtp_common.kartid, 
-dtp_common.date, 
-dtp_common.dtp_v, 
-dtp_common.pog, 
-dtp_common.ran, 
-dtp_common.k_ts, 
-dtp_common.k_uch AS kol_uch, 
-dtp_common.hour,
-dtp_info.n_p, 
-dtp_info.s_pch, 
-dtp_info.osv, 
-dtp_info.s_pog,
-dtp_transp_sr.n_ts, 
-dtp_transp_sr.t_ts, 
-dtp_transp_sr.r_rul, 
-dtp_transp_sr.g_v, 
-dtp_transp_sr.t_n,
-dtp_uchastnic.k_uch, 
-dtp_uchastnic.s_t, 
-dtp_uchastnic.pol, 
-dtp_uchastnic.v_st, 
-dtp_uchastnic.alco, 
-dtp_uchastnic.safety_belt,  
-dtp_uchastnic.npdd,
-dtp_uchastnic.sop_npdd,
-weather.weather_code, 
-weather.temperature_2m, 
-weather.dew_point_2m, 
-weather.rain, 
-weather.snowfall, 
-weather.snow_depth, 
-weather.sunshine_duration, 
-weather.wind_speed_10m, 
-weather.wind_direction_10m, 
-weather.wind_gusts_10m, 
-weather.cloud_cover, 
-weather.sunrise_hour, 
-weather.sunset_hour
-FROM dtp_common 
-LEFT JOIN dtp_info on dtp_common.kartid=dtp_info.kartid
-LEFT JOIN dtp_transp_sr on dtp_common.kartid=dtp_transp_sr.kartid
-LEFT JOIN dtp_uchastnic on dtp_common.kartid=dtp_uchastnic.kartid AND dtp_uchastnic.n_ts=dtp_transp_sr.n_ts
-INNER JOIN weather on weather.n_p=dtp_info.n_p AND weather.date=dtp_common.date AND weather.hour=dtp_common.hour;`
+   SELECT 
+   dtp_common.kartid, 
+   dtp_common.date, 
+   dtp_common.dtp_v, 
+   dtp_common.pog, 
+   dtp_common.ran, 
+   dtp_common.k_ts, 
+   dtp_common.k_uch AS kol_uch, 
+   dtp_common.hour,
+   dtp_info.n_p, 
+   dtp_info.s_pch, 
+   dtp_info.osv, 
+   dtp_info.s_pog,
+   dtp_transp_sr.n_ts, 
+   dtp_transp_sr.t_ts, 
+   dtp_transp_sr.r_rul, 
+   dtp_transp_sr.g_v, 
+   dtp_transp_sr.t_n,
+   dtp_uchastnic.k_uch, 
+   dtp_uchastnic.s_t, 
+   dtp_uchastnic.pol, 
+   dtp_uchastnic.v_st, 
+   dtp_uchastnic.alco, 
+   dtp_uchastnic.safety_belt,  
+   dtp_uchastnic.npdd,
+   dtp_uchastnic.sop_npdd,
+   weather.weather_code, 
+   weather.temperature_2m, 
+   weather.dew_point_2m, 
+   weather.rain, 
+   weather.snowfall, 
+   weather.snow_depth, 
+   weather.sunshine_duration, 
+   weather.wind_speed_10m, 
+   weather.wind_direction_10m, 
+   weather.wind_gusts_10m, 
+   weather.cloud_cover, 
+   weather.sunrise_hour, 
+   weather.sunset_hour
+   FROM dtp_common 
+   LEFT JOIN dtp_info on dtp_common.kartid=dtp_info.kartid
+   LEFT JOIN dtp_transp_sr on dtp_common.kartid=dtp_transp_sr.kartid
+   LEFT JOIN dtp_uchastnic on dtp_common.kartid=dtp_uchastnic.kartid AND dtp_uchastnic.n_ts=dtp_transp_sr.n_ts
+   INNER JOIN weather on weather.n_p=dtp_info.n_p AND weather.date=dtp_common.date AND weather.hour=dtp_common.hour;`
 
 
 *Этап 4. Создание дашборда*
