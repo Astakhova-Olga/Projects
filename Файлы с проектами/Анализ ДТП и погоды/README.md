@@ -55,6 +55,7 @@
 *Этап 3. Создание материализованного представления (MV)*
 
 Для удобства разработки аналитической панели в базе данных через  SQL Editor была реализована витрина данных в виде представления view_dtp_weather. Витрина данных содержит отобранные и объединенные данные об условиях, месте, транспортных средствах и участниках ДТП и о погодных условиях в месте и во время ДТП.
+
 CREATE VIEW view_dtp_weather AS
 SELECT 
 dtp_common.kartid, 
@@ -100,6 +101,7 @@ LEFT JOIN dtp_info on dtp_common.kartid=dtp_info.kartid
 LEFT JOIN dtp_transp_sr on dtp_common.kartid=dtp_transp_sr.kartid
 LEFT JOIN dtp_uchastnic on dtp_common.kartid=dtp_uchastnic.kartid AND dtp_uchastnic.n_ts=dtp_transp_sr.n_ts
 INNER JOIN weather on weather.n_p=dtp_info.n_p AND weather.date=dtp_common.date AND weather.hour=dtp_common.hour;
+
 
 *Этап 4. Создание дашборда*
 
